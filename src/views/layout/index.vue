@@ -32,6 +32,13 @@ import layoutheaderVue from './components/layout-header.vue';
   }
   &-right{
     flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &-body{
+      flex: 1;
+      overflow: hidden;
+    }
   }
 }
 </style>

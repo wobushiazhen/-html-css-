@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>permissions</h1>
+        <h1>00000</h1>
     </div>
 </template>

@@ -23,9 +23,12 @@
   import { useRouterListStore } from "@/store/routes.js";
   import layoutLeftItem from "./layout-left-item.vue";
   import { reactive, ref } from "vue";
+  import { useRoute } from 'vue-router';
   import {storeToRefs} from 'pinia'
+
+  const router=useRoute();
   //默认激活的路由
-  const activeIndex = ref("/");
+  const activeIndex = ref(router.path);
   const { getRoutes } = useRouterListStore();
   const {isOpen}=storeToRefs(useRouterListStore())
 </script>

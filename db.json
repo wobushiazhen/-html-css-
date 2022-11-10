@@ -1,0 +1,107 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "count": 4
+    },
+    {
+      "id": 2,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "count": 2
+    },
+    {
+      "id": 3,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "count": 2
+    },
+    {
+      "id": 4,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "count": 5
+    },
+    {
+      "id": 5,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "count": 6
+    }
+  ],
+  "user": 
+  [
+    {
+      "id": 3,
+      "adminName": "1111111",
+      "role": "超级管理员"
+    },
+    {
+      "id": 5,
+      "adminName": "azhen",
+      "role": "管理员"
+    },
+    {
+      "id": 6,
+      "adminName": "azhen",
+      "role": "管理员"
+    },
+    {
+      "adminName": "azhen",
+      "role": "管理员",
+      "id": 10
+    },
+    {
+      "adminName": "1241",
+      "role": "管理员",
+      "id": 11
+    },
+    {
+      "adminName": "55555",
+      "role": "超级管理员",
+      "id": 12
+    },
+    {
+      "adminName": "66666",
+      "role": "超级管理员",
+      "id": 14
+    },
+    {
+      "adminName": "222",
+      "role": "超级管理员",
+      "id": 16
+    },
+    {
+      "adminName": "124",
+      "role": "超级管理员",
+      "id": 17
+    },
+    {
+      "adminName": "4112",
+      "role": "超级管理员",
+      "id": 18
+    },
+    {
+      "adminName": "1241",
+      "role": "管理员",
+      "id": 19
+    },
+    {
+      "adminName": "124",
+      "role": "管理员",
+      "id": 20
+    },
+    {
+      "id": 21,
+      "adminName": "12512",
+      "role": "管理员"
+    }
+  ]
+}
