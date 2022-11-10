@@ -9,7 +9,7 @@
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input placeholder="密码" v-model="formData.adminPassword" />
+          <el-input placeholder="密码" type="password" v-model="formData.adminPassword" />
         </el-form-item>
         <!-- 登录按钮  @click="onSubmit" -->
         <el-form-item>
@@ -66,12 +66,12 @@ export default {
 .main {
   height: 100%;
   overflow: hidden;
-  background: rgb(121, 121, 121);
+  background: rgba(128, 0, 255, 0.725);
 }
 .login {
   border-radius: 12px;
   padding: 25px 50px;
-  width: 350px;
+  width: 310px;
   position: relative;
   left: 50%;
   top: 50%;
@@ -79,8 +79,8 @@ export default {
   background: rgb(251, 251, 251);
   // width: ;
   h2 {
+    line-height: 60px;
     text-align: center;
-    font-weight: 900;
     font-size: 34px;
   }
 }

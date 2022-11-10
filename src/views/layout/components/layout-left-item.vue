@@ -46,6 +46,8 @@ const path=computed(()=>{
 .el-menu {
   height: 100%;
   width: 100%;
-  background: #545c64;
+}
+.is-active{
+  color: rgba(254, 93, 6, 0.819);
 }
 </style>

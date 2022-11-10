@@ -19,17 +19,16 @@ import layoutLeftVue from './components/layout-left.vue';
 import layoutheaderVue from './components/layout-header.vue';
 </script>
 
-
-
 <style scoped lang="scss">
 .layout{
   height: 100%;
+  width: 100%;
   overflow: hidden;
   display: flex;
   &-left{
     height: 100%;
     overflow: hidden;
-    width: 200px;
+    // width: 200px;
   }
   &-right{
     flex: 1;

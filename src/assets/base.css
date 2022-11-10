@@ -13,3 +13,6 @@ body{
     padding: 0;
     margin: 0;  
 }
+.el-menu{
+    border-right: none;
+}
