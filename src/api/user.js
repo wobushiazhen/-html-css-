@@ -10,7 +10,8 @@ export function getUserList(){
 export function getSearchUserList(adminName){
     return request({
         method:"GET",
-        url:`/user?adminName=${adminName}`
+        url:`/user?adminName_li
+        ke=${adminName}`
     })
 }
 

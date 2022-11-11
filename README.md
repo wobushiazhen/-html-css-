@@ -1,7 +1,7 @@
 # admin-iwei
 
 
-## Project Setup
+## 安装项目依赖
 
 ```sh
 npm install
@@ -36,3 +36,9 @@ npm run lint
     - 数据渲染
     - 增删改查
     - 分页器
+-   商品管理
+    -   商品列表
+        -   数据渲染
+        -   表头排序
+        -   搜索
+        -   分页器

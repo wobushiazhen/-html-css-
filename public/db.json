@@ -1,0 +1,148 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "img": "https://img.alicdn.com/imgextra/i1/2214527277633/O1CN01y4SOey26FxxVlEBlX_!!0-item_pic.jpg_310x310.jpg",
+      "title": "春秋季情侣长袖睡衣套装休闲家居服两件套",
+      "price": 99.1,
+      "categore": 1,
+      "count": 4,
+      "area": "深圳"
+    },
+    {
+      "id": 2,
+      "img": "https://img.alicdn.com/imgextra/i4/2275046294/O1CN01FLAX8t1wMhc5pgRuq_!!2275046294.png_310x310.jpg",
+      "title": "baby.care皇室狮子纸尿裤mini装",
+      "price": 99.1,
+      "categore": 2,
+      "count": 2,
+      "area": "深圳"
+    },
+    {
+      "id": 3,
+      "img": "https://img.alicdn.com/imgextra/i1/2414806177/O1CN01eo6P3R1vV76EtCBwQ_!!2414806177-0-lubanu-s.jpg_310x310.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "categore": 3,
+      "count": 2,
+      "area": "杭州"
+    },
+    {
+      "id": 4,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【UKISS】睫毛打底膏不晕染",
+      "price": 99.1,
+      "categore": 4,
+      "count": 5,
+      "area": "成都"
+    },
+    {
+      "id": 5,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "categore": 5,
+      "count": 6,
+      "area": "杭州"
+    },
+    {
+      "id": 6,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "categore": 6,
+      "count": 6,
+      "area": "上海"
+    },
+    {
+      "id": 7,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "categore": 7,
+      "count": 2,
+      "area": "北京"
+    },
+    {
+      "id": 8,
+      "img": "https://img.alicdn.com/imgextra/i3/2930255252/O1CN01CRJmBd1ofStJgkdKm_!!2930255252.jpg_300x300.jpg",
+      "title": "【漫花抽纸】400张/包加量实惠装抽纸",
+      "price": 99.1,
+      "categore": 8,
+      "count": 6,
+      "area": "成都"
+    }
+  ],
+  "user": [
+    {
+      "id": 3,
+      "adminName": "1111111",
+      "role": "超级管理员"
+    },
+    {
+      "id": 5,
+      "adminName": "azhen",
+      "role": "管理员"
+    },
+    {
+      "id": 6,
+      "adminName": "azhen",
+      "role": "管理员"
+    },
+    {
+      "adminName": "azhen",
+      "role": "管理员",
+      "id": 10
+    },
+    {
+      "adminName": "1241",
+      "role": "管理员",
+      "id": 11
+    },
+    {
+      "adminName": "55555",
+      "role": "超级管理员",
+      "id": 12
+    },
+    {
+      "adminName": "66666",
+      "role": "超级管理员",
+      "id": 14
+    },
+    {
+      "adminName": "222",
+      "role": "超级管理员",
+      "id": 16
+    },
+    {
+      "adminName": "124",
+      "role": "超级管理员",
+      "id": 17
+    },
+    {
+      "adminName": "4112",
+      "role": "超级管理员",
+      "id": 18
+    },
+    {
+      "adminName": "1241",
+      "role": "管理员",
+      "id": 19
+    },
+    {
+      "adminName": "124",
+      "role": "管理员",
+      "id": 20
+    },
+    {
+      "id": 21,
+      "adminName": "12512",
+      "role": "管理员"
+    },
+    {
+      "id": 22,
+      "adminName": "124",
+      "role": "管理员"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router'
 
 import layout from '@/views/layout/index.vue'
 //菜单路由
@@ -103,7 +103,7 @@ export const routerList = [
         path: 'categoreis', 
         name: 'categoreis',
         label: '商品分类',
-        component:()=>import('@/views/categoreis/index.vue')
+        component:()=>import('@/views/goods/categore.vue')
       }
     ]
   },
@@ -115,7 +115,7 @@ export const routerList = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   //登录页，首页不在菜单显示
   routes: routerList
 })
