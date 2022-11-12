@@ -3,29 +3,28 @@ import request from "../utils";
 export function getUserList(){
     return request({
         method:"GET",
-        url:'/user'
+        url:'user'
     })
 }
 
 export function getSearchUserList(adminName){
     return request({
         method:"GET",
-        url:`/user?adminName_li
-        ke=${adminName}`
+        url:`user?adminName_like=${adminName}`
     })
 }
 
 export function delUserList(id){
     return request({
         method:"DELETE",
-        url:`/user/${id}`,
+        url:`user/${id}`,
     })
 }
 
 export function addUserList(params){
     return request({
         method:"POST",
-        url:`/user`,
+        url:`user`,
         data:params
     })
 }

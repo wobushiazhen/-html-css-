@@ -1,7 +1,7 @@
 <template>
   <el-dropdown>
     <span class="el-dropdown-link">
-      <el-avatar :size="30"> {{adminName}} </el-avatar>
+      <el-avatar :size="30"> {{userName}} </el-avatar>
       <el-icon class="el-icon--right">
         <arrow-down />
       </el-icon>
@@ -20,6 +20,8 @@ import {useUserInfoStore} from '@/store/userInfo.js'
 import { useRouter } from 'vue-router';
 const {adminName}=useUserInfoStore();
 const router=useRouter();
+
+const userName=localStorage.getItem('adminName')
 
 function checkout(){
     localStorage.clear()

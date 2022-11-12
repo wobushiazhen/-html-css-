@@ -167,67 +167,62 @@
     {
       "id": 3,
       "adminName": "1111111",
+      "password": "131",
       "role": "超级管理员"
     },
     {
       "id": 5,
       "adminName": "azhen",
+      "password": "131",
       "role": "管理员"
-    },
-    {
-      "id": 6,
-      "adminName": "azhen",
-      "role": "管理员"
-    },
-    {
-      "adminName": "azhen",
-      "role": "管理员",
-      "id": 10
     },
     {
       "adminName": "1241",
       "role": "管理员",
+      "password": "131",
       "id": 11
     },
     {
       "adminName": "55555",
       "role": "超级管理员",
+      "password": "99999999",
       "id": 12
     },
     {
       "adminName": "66666",
       "role": "超级管理员",
+      "password": "131",
       "id": 14
     },
     {
       "adminName": "222",
       "role": "超级管理员",
+      "password": "131",
       "id": 16
     },
     {
       "adminName": "124",
       "role": "超级管理员",
+      "password": "131",
       "id": 17
     },
     {
       "adminName": "1241",
+      "password": "131",
       "role": "管理员",
       "id": 19
     },
     {
-      "adminName": "124",
-      "role": "管理员",
-      "id": 20
-    },
-    {
       "id": 21,
       "adminName": "12512",
+      "password": "131",
       "role": "管理员"
     },
     {
       "id": 22,
-      "adminName": "124",
-      "role": "管理员"
+      "adminName": "admin",
+      "password": "123456",
+      "role": "超级管理员"
     }
   ]
 }

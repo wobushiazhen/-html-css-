@@ -1,12 +1,11 @@
 import { createApp } from 'vue'
-
 import App from './App.vue'
 import router from './router'
 import {createPinia} from 'pinia'
 import './assets/base.css'
+//进度条
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
 const app = createApp(App)
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'

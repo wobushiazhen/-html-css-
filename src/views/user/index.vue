@@ -36,7 +36,20 @@
                 <el-input disabled placeholder="id自动分配" v-model="drawerData.id" />
               </el-form-item>
               <el-form-item label="用户名" prop="adminName">
-                <el-input v-model="drawerData.adminName" />
+                <el-input  v-model="drawerData.adminName" />
+              </el-form-item>
+              <el-form-item label="密码" prop="password">
+                <el-input v-model="drawerData.password">
+                  <template v-if="handleType===2" #suffix>
+                    <el-tooltip content="复制密码" placement="bottom" effect="light">
+                      <el-icon @click="copy">
+                        <CopyDocument />
+                      </el-icon>
+                    </el-tooltip>
+                  </template>
+
+                </el-input>
+
               </el-form-item>
               <el-form-item label="身份" prop="role">
                 <el-select v-model="drawerData.role" placeholder="身份选择">
@@ -55,8 +68,8 @@
     </div>
   </div>
   <div class="footer-parger" v-show="listFliterDate?.length">
-      <el-pagination :total="userList?.length" v-model:current-page="page" :page-size="pageSize"
-        layout="total,prev, pager, next" />
+    <el-pagination :total="userList?.length" v-model:current-page="page" :page-size="pageSize"
+      layout="total,prev, pager, next" />
   </div>
 </template>
 
@@ -71,6 +84,8 @@ export default {
 import { useUserListStore } from "@/store/userList.js";
 import parger from "@/components/pager.vue";
 import { computed, onMounted, reactive, ref, } from "vue";
+//可复制
+import clipboard3 from 'vue-clipboard3'
 import {
   getUserList,
   delUserList,
@@ -80,22 +95,37 @@ import {
 } from "../../api/user.js";
 import { storeToRefs } from "pinia";
 
-const search=ref('')
+const search = ref('')
 const userList = ref(null);
 const drawer = ref(false);
 const formRef = ref();
 const handleType = ref(1);
 const { useUserList } = storeToRefs(useUserListStore());
 
+//可复制
+const { toClipboard } = clipboard3()
+const copy = async () => {
+  try {
+    await toClipboard(drawerData.password);
+    ElMessage({
+      showClose: true,
+      message: "复制成功",
+      type: "success",
+    });
+  } catch (error) {
+    console.log('复制失败');
+  }
+}
 
 //分页器
 const page = ref(1);
 const pageSize = ref(10);
 
 //
-const drawerData = reactive({ id: null, adminName: "", role: [] });
+const drawerData = reactive({ id: null, adminName: "", password: '', role: [] });
 const formRules = reactive({
   adminName: [{ required: true, message: "请填写" }],
+  password: [{ required: true, message: "请填写" }],
   role: [{ required: true, message: "请填写" }],
 });
 //获取用户信息
@@ -117,8 +147,8 @@ function filterDate() {
         message: "获取失败",
         type: "error",
       });
-    }).finally(()=>{
-    
+    }).finally(() => {
+
     })
 }
 
@@ -161,6 +191,7 @@ function handleEdit(row) {
   handleType.value = 2;
   drawerData.id = row.id;
   drawerData.adminName = row.adminName;
+  drawerData.password = row.password;
   drawerData.role = row.role;
   drawer.value = true;
 }
@@ -187,7 +218,7 @@ function handleEditConfirm() {
 
 //点击打开添加右侧抽屉
 function handleOpen() {
-  ((drawerData.id = null), (drawerData.adminName = "")), (drawerData.role = []);
+  ((drawerData.id = null), (drawerData.adminName = ""), (drawerData.password = ""), (drawerData.role = ''));
   drawer.value = true;
   handleType.value = 1;
 }
