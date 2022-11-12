@@ -5,8 +5,10 @@
         v-model.trim="search"
         style="margin-bottom: 3px"
         @keyup.enter="onSearch"
-        placeholder="搜索商品"
-      />
+        placeholder="搜索商品"/>
+      <el-button @click="listAdd">
+          添加
+      </el-button>
       <el-button @click="filterDate">
         <el-icon>
           <Refresh />
@@ -51,6 +53,17 @@
         <el-table-column prop="price" label="价格" width="120" />
         <el-table-column prop="count" label="库存" sortable width="120" />
         <el-table-column label="地区" prop="area" width="100" />
+        <el-table-column label="操作">
+          <template #default="scope">
+            <!-- <el-button size="small" @click="handleEdit(scope.row)">编辑</el-button> -->
+            <el-button
+              size="small"
+              type="danger"
+              @click="handleDelete(scope.row)"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
       </el-table>
     </div>
     <div class="footer-parger" v-show="listFliterDate?.length">
@@ -64,9 +77,11 @@
   </div>
 </template>
 <script setup>
-import { getGoods, getSearchGoodsList } from "@/api/goods.js";
+import { getGoods, getSearchGoodsList, delGood } from "@/api/goods.js";
 import { onMounted, ref, computed } from "vue";
+import { useRouter } from "vue-router";
 
+const router=useRouter()
 const list = ref();
 const search = ref("");
 //分页器
@@ -132,8 +147,35 @@ function onSearch() {
     });
 }
 
-function filterDate(){
-  goodList()
+function filterDate() {
+  goodList();
+}
+
+//删除
+function handleDelete(row) {
+  // let id = ;
+  delGood(row?.id)
+    .then((res) => {
+      console.log("删除成功！");
+      filterDate();
+      ElMessage({
+        showClose: true,
+        message: "删除成功",
+        type: "success",
+      });
+    })
+    .catch((err) => {
+      ElMessage({
+        showClose: true,
+        message: "删除失败",
+        type: "error",
+      });
+    });
+}
+
+//添加按钮
+function listAdd(){
+  router.replace('add')
 }
 //
 onMounted(() => {

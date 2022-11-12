@@ -6,14 +6,14 @@
           <el-table-column type="index" label="序号" width="180" />
           <el-table-column prop="id" label="用户id" width="180" />
           <el-table-column prop="adminName" label="用户名" width="180" />
-          <el-table-column prop="role" label="权限">
+          <el-table-column prop="role" label="权限" width="130">
             <template #default="scope">
               <el-tag :type="scope.row.role === '超' ? '' : 'success'"
                 >{{ scope.row.role }}
               </el-tag>
             </template>
           </el-table-column>
-          <el-table-column prop="createTime" label="创建日期" width="400" />
+          <el-table-column prop="createTime" label="创建日期" width="420" />
           <el-table-column label="状态">
             <template #default="scope">
               <el-button size="small" @click="handleEdit(scope.row)"

@@ -17,7 +17,6 @@
               </el-icon>
             </el-button>
           </template>
-
           <template #default="scope">
             <el-button size="small" @click="handleEdit(scope.row)">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(scope.row)">删除</el-button>
@@ -118,7 +117,9 @@ function filterDate() {
         message: "获取失败",
         type: "error",
       });
-    });
+    }).finally(()=>{
+    
+    })
 }
 
 // 删除

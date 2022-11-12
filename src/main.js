@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from './router'
 import {createPinia} from 'pinia'
 import './assets/base.css'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 const app = createApp(App)
 
@@ -13,5 +15,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 app.use(router)
+app.use(NProgress)
 app.use(createPinia())
 app.mount('#app')
