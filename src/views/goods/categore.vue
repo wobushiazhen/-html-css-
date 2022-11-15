@@ -2,7 +2,7 @@
   <div class="goods-list">
     <div class="goods-body">
       <keep-alive>
-        <el-tabs @tab-click="fn1" class="demo-tabs">
+        <el-tabs v-model="activeName" @tab-click="tabChange" class="demo-tabs">
           <el-tab-pane
             :label="item"
             :name="item"
@@ -69,7 +69,7 @@ import { ref, onMounted } from "vue";
 const list = ref();
 
 //默认选中
-// const activeName = ref("家电");
+const activeName = ref("家电");
 
 let cetegores = ref([
   "服装",
@@ -112,7 +112,7 @@ function changeMenu(item) {
   console.log("11111", item);
 }
 
-function fn1(tab) {
+function tabChange(tab) {
   getCategoreGoodsList(tab.index)
     .then((res) => {
       list.value = res.data;
@@ -128,8 +128,6 @@ function fn1(tab) {
       });
     });
 }
-
-//
 
 //页面加载拿数据
 onMounted(() => {

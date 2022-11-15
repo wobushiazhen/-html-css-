@@ -7,22 +7,26 @@
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 运行
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 打包
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### 你还需要启动数据
 
 ```sh
-npm run lint
+npm install json-server
+```
+
+```sh
+json-server db.json
 ```
 
 ### 功能完成情况
@@ -66,4 +70,8 @@ npm run lint
 
 ### 简单总结
 > 项目使用（技术栈和工具） vite、vue3、router@4、element-plus、pinia、echarts（简单引入）、和各种第三方组件。完成情况已经列在上面。总体来说小功能还是很多的。
+
+项目技术难点：对于自己做的假数据，可能一开始没有想到要那么多数据，项目做到后面发送还要继续添加一些新的数据，但是这样会把我之前写好的代码搞乱了。
+难点还是页面权限。解决方案上网找资料。
+项目收获：自己独立完成还是有很大收获的，学会使用更多的组件，遇到bug的解决方案。做项目真爽，用人家的组件真爽。
 

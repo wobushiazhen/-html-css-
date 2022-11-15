@@ -188,6 +188,7 @@ function onSearch() {
 
 //编辑
 function handleEdit(row) {
+  console.log(row);
   handleType.value = 2;
   drawerData.id = row.id;
   drawerData.adminName = row.adminName;
