@@ -18,13 +18,14 @@
       <el-tab-pane label="页面权限" name="pageRole">
         <div class="roleList">
           <h3>选择页面权限</h3>
+          <!-- :filter-node-method="filterNode"
+             :props="defaultProps"
+          -->
           <el-tree
             ref="treeRef"
             class="filter-tree"
             show-checkbox
             :data="getRoutes"
-            :props="defaultProps"
-            :filter-node-method="filterNode"
           />
           <el-button size="small" @click="handleAdd">确认</el-button>
           <el-button size="small" @click="handleReset">重置</el-button>
@@ -37,7 +38,7 @@
 
 <script setup>
 import { getUserList } from "@/api/user.js";
-import { ref, watch, onMounted, computed } from "vue";
+import { ref, onMounted, computed, reactive } from "vue";
 import { useRouterListStore } from "@/store/routes.js";
 const { getRoutes } = useRouterListStore();
 
@@ -48,12 +49,19 @@ const changeNames = ref([]);
 //树形组件
 // const filterText = ref('')
 const treeRef = ref("");
+//选中的权限的数据
+const treeData = ref([]);
+
+// 验证字段
+const formRef = ref();
+const validateForm = reactive({
+  userName: "",
+});
 
 const defaultProps = {
   children: "children",
   label: "label",
 };
-
 
 //选中的页面权限
 const selectedData = ref([]);
@@ -85,12 +93,29 @@ function filterDate() {
 }
 
 //重置
-function handleReset(){
-    console.log(111);
-    // selectedData.value=treeRef.value?.getCheckedKeys()
-    treeRef.value=['']
+function handleReset() {
+  if (!changeNames.value.length) {
+    ElMessage({
+      showClose: true,
+      message: "请选择用户",
+      type: "error",
+    });
+  }
+  console.log(changeNames);
+  let checkedNodes = treeRef.value?.getCheckedNodes();
+  checkedNodes = checkedNodes.map((item) => {
+    return item.name;
+  });
 }
 
+//确认按钮
+const handleAdd = async () => {
+  console.log(treeRef.value?.getCheckedNodes());
+  treeData.value = await treeRef.value?.getCheckedNodes();
+  treeData.value.map((item) => {
+    console.log(item.path);
+  });
+};
 onMounted(() => {
   filterDate();
   //   console.log(userList.value.data);
@@ -103,8 +128,13 @@ const adminNameList = computed(() => {
   });
 });
 
+//算出权限
+const roleData = computed(() => {
+  treeData.value.map((item) => {
+    console.log(item.path);
+  });
+});
 </script>
-
 
 <style setup>
 #role {
@@ -121,12 +151,14 @@ const adminNameList = computed(() => {
 .user-body {
   flex: 1;
 }
+
 .roleList {
   width: 500px;
   padding: 20px;
   border: 1px solid #ccc;
 }
-.el-tree{
-    margin: 20px 0px;
+
+.el-tree {
+  margin: 20px 0px;
 }
 </style>

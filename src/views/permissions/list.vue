@@ -44,6 +44,7 @@
 <script setup>
 import { getUserList } from "@/api/user.js";
 import { computed, onMounted, ref } from "vue";
+import dayjs from 'dayjs'
 const userList = ref();
 const date = new Date();
 
@@ -57,7 +58,7 @@ function filterData() {
     .then((res) => {
       userList.value = res.data;
       for (var i = 0; i < userList.value?.length; i++) {
-        userList.value[i].createTime = date;
+        userList.value[i].createTime =dayjs(date).format('YYYY-MM-DD HH:mm:ss');
       }
       if (userList.value.length) {
         ElMessage({

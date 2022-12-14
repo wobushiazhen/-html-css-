@@ -44,15 +44,18 @@ export default {
     //登录按钮
     const router = useRouter();
     const userInfo = useUserInfoStore();
+
+    //提交按钮
     function onSubmit() {
+      // 表单验证
       formRef.value?.validate();
+      // 登录请求
       login(formData)
         .then((res) => {
-          console.log(res.data.adminName);
+          //判断请求的数据
           if (res.data.length) {
             localStorage.setItem("token", "aa"); //请求回来的token
             //往仓库存数据
-            // userInfo.adminName = formData.adminName;
             localStorage.setItem("adminName",formData.adminName)
             router.replace("/");
             ElMessage({

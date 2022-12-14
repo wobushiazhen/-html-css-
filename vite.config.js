@@ -17,18 +17,18 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-  resolve: { 
+  resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
   // server:{
-  //   proxy:{
-  //     '/':{
-  //       target:'http://43.143.232.36:3000',
-  //       changeOrigin:true,
-  //       rewriter:(path)=>path.replace(/^\//,'')
-  //     }
-  //   }
+  // proxy:{
+  // '/':{
+  // target:'http://43.143.232.36:3000',
+  // changeOrigin:true,
+  // rewriter:(path)=>path.replace(/^\//,'')
+  // }
+  // }
   // }
 })

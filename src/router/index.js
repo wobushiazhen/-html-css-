@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import layout from '@/views/layout/index.vue'
@@ -8,20 +8,21 @@ export const routerList = [
     path: '/',
     name: 'home',
     label: '首页',
-    component:layout,
-    redirect:'/home/tu',
+    component: layout,
+    redirect: '/home/tu',
   },
   {
-    path:'/home',
-    name:'首页',
-    label:'图标',
-    hiddent:true,
-    component:layout,
-    children:[
-     { 
-      path:'tu',
-       name:"图表",
-       component: ()=>import('@/views/home/index.vue'),}
+    path: '/home',
+    name: '首页',
+    label: '图标',
+    hiddent: true,
+    component: layout,
+    children: [
+      {
+        path: 'tu',
+        name: "图表",
+        component: () => import('@/views/home/index.vue'),
+      }
     ]
   },
   // 登录
@@ -114,10 +115,10 @@ export const routerList = [
       },
       //商品分类
       {
-        path: 'categoreis', 
+        path: 'categoreis',
         name: '商品分类',
         label: '商品分类',
-        component:()=>import('@/views/goods/categore.vue')
+        component: () => import('@/views/goods/categore.vue')
       }
     ]
   },
@@ -126,20 +127,42 @@ export const routerList = [
   //   path:'categoreis',
   //   name:'categoreis'
   // }
+  {
+    path: "/:path(.*)",
+    hiddent: true,
+    name: '404',
+    component: () => import('@/views/404/page404.vue')
+  },
+  //上传
+  {
+    path: "/upload",
+    name: "上传",
+    label:"上传",
+    component: layout,
+    children: [
+      {
+        path: "file",
+        name: '文件上传',
+        label:"文件上传",
+        component: () => import('@/views/upload/index.vue')
+      }
+    ]
+
+  }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   //登录页，首页不在菜单显示
   routes: routerList
 })
 
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
   NProgress.start();
   next();
 })
 
-router.afterEach(()=>{
+router.afterEach(() => {
   NProgress.done();
 })
 export default router
